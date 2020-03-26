@@ -1,5 +1,9 @@
 package main
 
+//go:generate ./build-bindata.sh
+//go:generate go-bindata -prefix bindata -pkg server -ignore=\\.gitkeep -o server/asset.go bindata/...
+//go:generate go fmt server/asset.go
+
 import (
 	"context"
 	"fmt"
